@@ -1,0 +1,9 @@
+1) It should have a place to store todos
+2) It should have a way to display todos
+3) It should have a way add new todos
+4) It should have a way to change a todo
+5) It should have a way to delete a todo
+
+
+1) It should have a place to store todos
+var todos = [ "item 1", "item 2", "item 3" ];
