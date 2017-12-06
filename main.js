@@ -39,5 +39,83 @@ var todoList = {
     var todo = this.todos[position];
     todo.completed = !todo.completed;
     this.displayTodos();
+  },
+  toggleAll : function(){
+    var completedTodos = 0;
+    var allTodos = this.todos.length;
+    // Get number of completed todos
+    for(var i=0; i<this.todos.length; i++){
+      if(this.todos[i].completed === true){
+        completedTodos++;
+      }
+    }
+    // Case 1: if everything's true, make everything false
+    if(completedTodos === allTodos){
+      for(var i=0; i<allTodos; i++){
+        this.todos[i].completed = false;
+      } // Case 2: Otherwise, make everything true
+    }else{
+      for(var i=0; i<allTodos; i++){
+        this.todos[i].completed = true;
+      }
+    }
+    this.displayTodos();
   }
 };
+
+var handlers = {
+  displayTodos : function(){
+  todoList.displayTodos();
+  },
+  toggleAll : function(){
+    todoList.toggleAll();
+  },
+  addTodo : function(){
+    var addTodoTextInput = document.getElementById("addTodoTextInput");
+    todoList.addTodo(addTodoTextInput.value);
+    addTodoTextInput.value = "";
+  },
+  changeTodo : function(){
+    var changeTodoPositionInput = document.getElementById("changeTodoPositionInput");
+    var changeTodoTextInput = document.getElementById("changeTodoTextInput");
+    todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
+    changeTodoPositionInput.value = "";
+    changeTodoTextInput.value = "";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

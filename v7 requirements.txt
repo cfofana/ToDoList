@@ -1,0 +1,16 @@
+[1,2,3] === [1,2,3]    will be false
+{}  === {}   will be false
+
+1) There should be a "Display todos" button and a "Toggle all" button in the app
+2) Clicking "Display todos" should run todoList.displayTodos()
+3) Clicking "Toggle all" should run todoList.toggleAll()
+
+var displayTodosButton = document.getElementById('displayTodosBtn');
+displayTodosButton.addEventListener('click', function(){
+  todoList.displayTodos();
+});
+
+var toggleAllButton = document.getElementById('toggleAllBtn');
+toggleAllButton.addEventListener('click', function(){
+  todoList.toggleAll();
+});
