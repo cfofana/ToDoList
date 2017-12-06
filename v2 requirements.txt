@@ -1,0 +1,31 @@
+V2 requirements
+1)	It should have a function to display todos
+2)	It should have a function to add todos
+3)	It should have a function to change todos
+4)	It should have a function to delete todos
+
+
+
+1)	It should have a function to display todos
+function displayTodos(){
+	console.log(todos);
+}
+
+2)	It should have a function to add todos
+function addTodo(todo){
+	todos.push(todo);
+	displayTodos();
+}
+
+
+3)	It should have a function to change todos
+function changeTodo(position, newValue){
+	todos[position] = newValue;
+	displayTodos();
+}
+
+4)	It should have a function to delete todos
+function deleteTodo(position){
+	todos.splice(position, 1);
+}
+
