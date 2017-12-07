@@ -1,0 +1,49 @@
+1) todoList.toggleAll should use forEach
+2) view.displayTodos should use forEach
+
+1) toggleAll: function() {
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+    
+    // Get number of completed todos.
+    this.todos.forEach(function(todo){
+      if(todo.completed === true){
+        completedTodos++;
+      }
+    });
+    
+    this.todos.forEach(function(todo){
+      // Case 1: If everything's true, make everything false.
+      if(completedTodos === totalTodos){
+        todo.completed = false;
+      // Case 2: Otherwise, make everything true.
+      }else{
+        todo.completed = true;
+      }
+    });
+  }
+
+
+
+
+2)
+isplayTodos: function() {
+    var todosUl = document.querySelector('ul');
+    todosUl.innerHTML = '';
+    todoList.todos.forEach(function(todo, position){
+      var todoLi = document.createElement('li');
+      var todoTextWithCompletion = '';
+
+      if (todo.completed === true) {
+        todoTextWithCompletion = '(x) ' + todo.todoText;
+      } else {
+        todoTextWithCompletion = '( ) ' + todo.todoText;
+      }
+      
+       todoLi.id = position;
+      todoLi.textContent = todoTextWithCompletion;
+      todoLi.appendChild(this.createDeleteButton())
+      todosUl.appendChild(todoLi);
+    }, this);
+    
+  }
